@@ -1590,7 +1590,7 @@ asyn_error:
 }
 
 /*===========================================================================*
- *				enqueue					     * 
+ *				enqueue (MODIFICADO)		     * 
  *===========================================================================*/
 void enqueue(
   register struct proc *rp	/* this process is now runnable */
@@ -1608,8 +1608,15 @@ void enqueue(
   struct proc **rdy_head, **rdy_tail;
   
   assert(proc_is_runnable(rp));
-
   assert(q >= 0);
+
+/* --- ADICIONADO: Algoritmo Prioridade Estatica --- */
+  if (rp->p_priority < USER_Q) { 					/* 7 costuma ser o limite do USER_Q no Minix */
+      rp->p_static_priority = 0; 					/* Processos de sistema ganham prioridade maxima (0) */
+  } else {
+      rp->p_static_priority = rp->p_priority; 		/* Processos de usuario travam na prioridade original */
+  }
+  /* ------------------------------------------------- */
 
   rdy_head = get_cpu_var(rp->p_cpu, run_q_head);
   rdy_tail = get_cpu_var(rp->p_cpu, run_q_tail);
@@ -1780,34 +1787,33 @@ void dequeue(struct proc *rp)
 }
 
 /*===========================================================================*
- *				pick_proc				     * 
+ *				pick_proc (MODIFICADO)		     * 
  *===========================================================================*/
 static struct proc * pick_proc(void)
 {
-/* Decide who to run now.  A new process is selected and returned.
- * When a billable process is selected, record it in 'bill_ptr', so that the 
- * clock task can tell who to bill for system time.
- *
- * This function always uses the run queues of the local cpu!
- */
-  register struct proc *rp;			/* process to run */
-  struct proc **rdy_head;
-  int q;				/* iterate over queues */
+  register struct proc *rp;
+  struct proc *highest_pri_proc = NULL;
+  int highest_priority = 9999;
+  int p_proc_nr;
 
-  /* Check each of the scheduling queues for ready processes. The number of
-   * queues is defined in proc.h, and priorities are set in the task table.
-   * If there are no processes ready to run, return NULL.
-   */
-  rdy_head = get_cpulocal_var(run_q_head);
-  for (q=0; q < NR_SCHED_QUEUES; q++) {	
-	if(!(rp = rdy_head[q])) {
-		TRACE(VF_PICKPROC, printf("cpu %d queue %d empty\n", cpuid, q););
-		continue;
-	}
-	assert(proc_is_runnable(rp));
-	if (priv(rp)->s_flags & BILLABLE)	 	
-		get_cpulocal_var(bill_ptr) = rp; /* bill for system time */
-	return rp;
+  /* Varre todos os processos e tarefas da tabela */
+  for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++) {
+      rp = proc_addr(p_proc_nr);
+      /* Se o processo nao esta vazio e esta pronto para rodar */
+      if(!isemptyp(rp) && proc_is_runnable(rp)) {
+          /* Encontra o menor valor numerico (maior prioridade) */
+          if (rp->p_static_priority < highest_priority) {
+              highest_priority = rp->p_static_priority;
+              highest_pri_proc = rp;
+          }
+      }
+  }
+  /* Se encontrou um vencedor, registra o uso da CPU e retorna */
+  if(highest_pri_proc) {
+      if(priv(highest_pri_proc)->s_flags & BILLABLE) {
+          get_cpulocal_var(bill_ptr) = highest_pri_proc;
+      }
+      return highest_pri_proc;
   }
   return NULL;
 }
