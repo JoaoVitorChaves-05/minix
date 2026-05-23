@@ -1791,31 +1791,36 @@ void dequeue(struct proc *rp)
  *===========================================================================*/
 static struct proc * pick_proc(void)
 {
-  register struct proc *rp;
-  struct proc *highest_pri_proc = NULL;
-  int highest_priority = 9999;
-  int p_proc_nr;
+    register struct proc *rp;
+    struct proc *highest_pri_proc = NULL;
+    int highest_priority = 9999;
+    int q;
+    struct proc **rdy_head;
 
-  /* Varre todos os processos e tarefas da tabela */
-  for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++) {
-      rp = proc_addr(p_proc_nr);
-      /* Se o processo nao esta vazio e esta pronto para rodar */
-      if(!isemptyp(rp) && proc_is_runnable(rp)) {
-          /* Encontra o menor valor numerico (maior prioridade) */
-          if (rp->p_static_priority < highest_priority) {
-              highest_priority = rp->p_static_priority;
-              highest_pri_proc = rp;
-          }
-      }
-  }
-  /* Se encontrou um vencedor, registra o uso da CPU e retorna */
-  if(highest_pri_proc) {
-      if(priv(highest_pri_proc)->s_flags & BILLABLE) {
-          get_cpulocal_var(bill_ptr) = highest_pri_proc;
-      }
-      return highest_pri_proc;
-  }
-  return NULL;
+    /* Pega o array das filas oficiais de processos prontos do MINIX */
+    rdy_head = get_cpulocal_var(run_q_head);
+
+    /* Varre APENAS os processos que estao esperando nas filas */
+    for (q = 0; q < NR_SCHED_QUEUES; q++) {
+        /* Percorre os processos encadeados dentro de cada fila */
+        for (rp = rdy_head[q]; rp != NULL; rp = rp->p_nextready) {
+            /* Encontra o processo com a maior prioridade estatica (menor numero) */
+            if (rp->p_static_priority < highest_priority) {
+                highest_priority = rp->p_static_priority;
+                highest_pri_proc = rp;
+            }
+        }
+    }
+
+    /* Se encontrou um vencedor, registra o uso da CPU e retorna */
+    if(highest_pri_proc) {
+        if(priv(highest_pri_proc)->s_flags & BILLABLE) {
+            get_cpulocal_var(bill_ptr) = highest_pri_proc;
+        }
+        return highest_pri_proc;
+    }
+
+    return NULL;
 }
 
 /*===========================================================================*
