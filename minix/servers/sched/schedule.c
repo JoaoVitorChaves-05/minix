@@ -95,10 +95,13 @@ int do_noquantum(message *m_ptr)
 		return EBADEPT;
 	}
 
+	/*
+	Here, we remove the priority change, so that the process is not demoted to the lower priority queue when it runs out of quantum. The process will continue to be scheduled in the same queue, but it will be out of quantum, and will only get quantum again when it is rebalanced by the balance_queues() function.
 	rmp = &schedproc[proc_nr_n];
 	if (rmp->priority < MIN_USER_Q) {
-		rmp->priority += 1; /* lower priority */
+		rmp->priority += 1; // lower priority
 	}
+	*/
 
 	if ((rv = schedule_process_local(rmp)) != OK) {
 		return rv;
@@ -355,14 +358,17 @@ void balance_queues(void)
 	struct schedproc *rmp;
 	int r, proc_nr;
 
+	/*
+	Aqui, nós removemos a mudança de prioridade, para que o processo não seja subido para a fila de prioridade mais alta quando ele for reequilibrado. O processo continuará a ser agendado na mesma fila, mas ele terá quantum novamente, somente quando todos os processos forem reequilibrados pela função balance_queues().
 	for (proc_nr=0, rmp=schedproc; proc_nr < NR_PROCS; proc_nr++, rmp++) {
 		if (rmp->flags & IN_USE) {
 			if (rmp->priority > rmp->max_priority) {
-				rmp->priority -= 1; /* increase priority */
+				rmp->priority -= 1; // increase priority
 				schedule_process_local(rmp);
 			}
 		}
 	}
+	*/
 
 	if ((r = sys_setalarm(balance_timeout, 0)) != OK)
 		panic("sys_setalarm failed: %d", r);

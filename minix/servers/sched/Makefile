@@ -5,4 +5,4 @@ SRCS=	main.c schedule.c utility.c
 DPADD+=	${LIBSYS}
 LDADD+=	-lsys
 
-.include <minix.service.mk>
+.include	<minix.service.mk>
