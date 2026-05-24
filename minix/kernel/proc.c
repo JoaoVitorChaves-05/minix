@@ -1892,7 +1892,10 @@ static void notify_scheduler(struct proc *p)
 
 void proc_no_time(struct proc * p)
 {
-	if (!proc_kernel_scheduler(p) && priv(p)->s_flags & PREEMPTIBLE) {
+	if ((!proc_kernel_scheduler(p)) && (priv(p)->s_flags & PREEMPTIBLE) && (p->p_priority < USER_Q)) {
+		// foi adicionada a restrição de prioridade para que os processos de usuário
+    	// não sofram preempção por tempo, mantendo o FCFS apenas no espaço de usuário
+
 		/* this dequeues the process */
 		notify_scheduler(p);
 	}
