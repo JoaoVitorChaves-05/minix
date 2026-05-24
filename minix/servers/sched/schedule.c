@@ -97,7 +97,9 @@ int do_noquantum(message *m_ptr)
 
 	rmp = &schedproc[proc_nr_n];
 	if (rmp->priority < MIN_USER_Q) {
-		rmp->priority += 1; /* lower priority */
+		// Os processos mantem o seu lugar na fila, ou seja,
+		// as prioridades permanecem estáticas, respeitando a ordem de chegada dos processos
+		//rmp->priority += 1; /* lower priority */
 	}
 
 	if ((rv = schedule_process_local(rmp)) != OK) {
@@ -352,6 +354,10 @@ void init_scheduling(void)
  */
 void balance_queues(void)
 {
+	return; 
+	// foi adicionado o "return" para que a função "balance_queues" não rode o rebalanceamento,
+	// impedindo que o sistema altere as prioridades da ordem de chegada
+
 	struct schedproc *rmp;
 	int r, proc_nr;
 
