@@ -194,7 +194,12 @@ int do_start_scheduling(message *m_ptr)
 		/* We have a special case here for system processes, for which
 		 * quanum and priority are set explicitly rather than inherited 
 		 * from the parent */
-		rmp->priority   = rmp->max_priority;
+
+		// Para a aplicação do FCFS geral:
+		// Todos os processos (sistema ou de usuário) são forçados a 
+		// entrar na fila USER_Q (Fila 7), com o intuito de não 
+		// oferecer privilegio a nenhum deles.
+		rmp->priority   = USER_Q;
 		rmp->time_slice = m_ptr->m_lsys_sched_scheduling_start.quantum;
 		break;
 		
@@ -206,7 +211,12 @@ int do_start_scheduling(message *m_ptr)
 				&parent_nr_n)) != OK)
 			return rv;
 
-		rmp->priority = schedproc[parent_nr_n].priority;
+
+		// Para a aplicação do FCFS geral:
+		// Se um processo pai criar um filho, o filho também é forçado 
+		// a entrar no final da fila USER_Q (7), garantindo que concorra 
+		// igualmente na ordem de chegada.
+		rmp->priority = USER_Q;
 		rmp->time_slice = schedproc[parent_nr_n].time_slice;
 		break;
 		
@@ -255,6 +265,13 @@ int do_start_scheduling(message *m_ptr)
  *===========================================================================*/
 int do_nice(message *m_ptr)
 {
+	// Para a aplicação do FCFS geral:
+	// A chamada de sistema "do_nice" permite que usuários alterem a prioridade
+	// de seus processos. Retornar 'OK' imediatamente neutraliza 
+    // essa função. Nenhum usuário conseguirá usar comandos para furar a fila 
+    // única do FCFS.
+	return OK;
+
 	struct schedproc *rmp;
 	int rv;
 	int proc_nr_n;
