@@ -1892,32 +1892,18 @@ static void notify_scheduler(struct proc *p)
 
 void proc_no_time(struct proc * p)
 {
-	// Abordagem Híbrida FCFS:
-	// A restrição (p->p_priority < USER_Q) garante que apenas processos vitais
-	// do sistema continuem sofrendo preempção por tempo, com o intuito de 
-	// garantir a estabilidade do microkernel.
-	// Processos de usuário (prioridade >= USER_Q) cairão no 'else', 
-	// onde o quantum é renovado, implementando o FCFS puro.
-	if ((!proc_kernel_scheduler(p)) && (priv(p)->s_flags & PREEMPTIBLE) && (p->p_priority < USER_Q)) {
-		/* this dequeues the process */
-		notify_scheduler(p);
-	}
-	else {
-		/*
-		 * non-preemptible processes only need their quantum to
-		 * be renewed. In fact, they by pass scheduling
-		 */
+	// Implementação FCFS:
+	// Tanto processos de usuário quanto processos vitais do 
+	// sistema (microkernel) terão seu quantum renovado.
+    // Nenhum processo sofre preempção por tempo, rodando até terminar
+    // ou se bloquear voluntariamente.
+	p->p_cpu_time_left = ms_2_cpu_time(p->p_quantum_size_ms);
 
-		// De acordo com a Abordagem Híbrida FCFS:
-		// O quantum é renovado para processos de usuário (prioridade >= USER_Q).
-		// Isso garante que eles (como um grupo) não sofram preempção por tempo, rodando até 
-		// terminar ou se bloquear, respeitando a prioridade superior do sistema.
-		p->p_cpu_time_left = ms_2_cpu_time(p->p_quantum_size_ms);
 #if DEBUG_RACE
 		RTS_SET(p, RTS_PREEMPTED);
 		RTS_UNSET(p, RTS_PREEMPTED);
 #endif
-	}
+	
 }
 
 void reset_proc_accounting(struct proc *p)
