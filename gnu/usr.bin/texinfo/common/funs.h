@@ -2,7 +2,7 @@
 
 #include "info.h"
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/session.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/session.c". */
 #define A_info_next_line 0
 extern void info_next_line (WINDOW *window, int count, unsigned char key);
 #define A_info_prev_line 1
@@ -150,7 +150,7 @@ extern void info_universal_argument (WINDOW *window, int count, unsigned char ke
 #define A_info_numeric_arg_digit_loop 72
 extern void info_numeric_arg_digit_loop (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/echo-area.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/echo-area.c". */
 #define A_ea_forward 73
 extern void ea_forward (WINDOW *window, int count, unsigned char key);
 #define A_ea_backward 74
@@ -198,7 +198,7 @@ extern void ea_complete (WINDOW *window, int count, unsigned char key);
 #define A_ea_scroll_completions_window 95
 extern void ea_scroll_completions_window (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/infodoc.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/infodoc.c". */
 #define A_info_get_help_window 96
 extern void info_get_help_window (WINDOW *window, int count, unsigned char key);
 #define A_info_get_info_help_node 97
@@ -208,7 +208,7 @@ extern void describe_key (WINDOW *window, int count, unsigned char key);
 #define A_info_where_is 99
 extern void info_where_is (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/m-x.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/m-x.c". */
 #define A_describe_command 100
 extern void describe_command (WINDOW *window, int count, unsigned char key);
 #define A_info_execute_command 101
@@ -216,7 +216,7 @@ extern void info_execute_command (WINDOW *window, int count, unsigned char key);
 #define A_set_screen_height 102
 extern void set_screen_height (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/indices.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/indices.c". */
 #define A_info_index_search 103
 extern void info_index_search (WINDOW *window, int count, unsigned char key);
 #define A_info_next_index_match 104
@@ -224,17 +224,17 @@ extern void info_next_index_match (WINDOW *window, int count, unsigned char key)
 #define A_info_index_apropos 105
 extern void info_index_apropos (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/nodemenu.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/nodemenu.c". */
 #define A_list_visited_nodes 106
 extern void list_visited_nodes (WINDOW *window, int count, unsigned char key);
 #define A_select_visited_node 107
 extern void select_visited_node (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/footnotes.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/footnotes.c". */
 #define A_info_show_footnotes 108
 extern void info_show_footnotes (WINDOW *window, int count, unsigned char key);
 
-/* Functions declared in "/usr/src/minix/gnu/dist/texinfo/info/variables.c". */
+/* Functions declared in "/usr/src/gnu/dist/texinfo/info/variables.c". */
 #define A_describe_variable 109
 extern void describe_variable (WINDOW *window, int count, unsigned char key);
 #define A_set_variable 110

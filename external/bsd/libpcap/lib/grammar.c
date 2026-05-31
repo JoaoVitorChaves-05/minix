@@ -116,7 +116,7 @@
 
 #define YYPURE 0
 
-#line 4 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 4 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996
  *	The Regents of the University of California.  All rights reserved.
@@ -371,7 +371,7 @@ pfaction_to_num(const char *action)
 	return -1;
 }
 #endif /* HAVE_NET_PFVAR_H */
-#line 260 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 260 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 #ifdef YYSTYPE
 #undef  YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
@@ -1670,64 +1670,64 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 335 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 335 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 	finish_parse(yystack.l_mark[0].blk.b);
 }
 break;
 case 3:
-#line 340 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 340 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.q = qerr; }
 break;
 case 5:
-#line 343 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 343 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_and(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 6:
-#line 344 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 344 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_and(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 7:
-#line 345 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 345 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_or(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 8:
-#line 346 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 346 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_or(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 9:
-#line 348 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 348 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk = yystack.l_mark[-1].blk; }
 break;
 case 10:
-#line 350 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 350 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk = yystack.l_mark[-1].blk; }
 break;
 case 12:
-#line 353 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 353 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_ncode(NULL, (bpf_u_int32)yystack.l_mark[0].i,
 						   yyval.blk.q = yystack.l_mark[-1].blk.q); }
 break;
 case 13:
-#line 355 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 355 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk = yystack.l_mark[-1].blk; }
 break;
 case 14:
-#line 357 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 357 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_scode(yystack.l_mark[0].s, yyval.blk.q = yystack.l_mark[-1].blk.q); }
 break;
 case 15:
-#line 358 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 358 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_mcode(yystack.l_mark[-2].s, NULL, yystack.l_mark[0].i,
 				    yyval.blk.q = yystack.l_mark[-3].blk.q); }
 break;
 case 16:
-#line 360 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 360 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_mcode(yystack.l_mark[-2].s, yystack.l_mark[0].s, 0,
 				    yyval.blk.q = yystack.l_mark[-3].blk.q); }
 break;
 case 17:
-#line 362 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 362 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 				  /* Decide how to parse HID based on proto */
 				  yyval.blk.q = yystack.l_mark[-1].blk.q;
@@ -1743,7 +1743,7 @@ case 17:
 				}
 break;
 case 18:
-#line 375 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 375 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 #ifdef INET6
 				  yyval.blk.b = gen_mcode6(yystack.l_mark[-2].s, NULL, yystack.l_mark[0].i,
@@ -1755,7 +1755,7 @@ case 18:
 				}
 break;
 case 19:
-#line 384 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 384 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 #ifdef INET6
 				  yyval.blk.b = gen_mcode6(yystack.l_mark[0].s, 0, 128,
@@ -1767,7 +1767,7 @@ case 19:
 				}
 break;
 case 20:
-#line 393 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 393 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 				  yyval.blk.b = gen_ecode(yystack.l_mark[0].e, yyval.blk.q = yystack.l_mark[-1].blk.q);
 				  /*
@@ -1779,7 +1779,7 @@ case 20:
 				}
 break;
 case 21:
-#line 402 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 402 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 				  yyval.blk.b = gen_acode(yystack.l_mark[0].e, yyval.blk.q = yystack.l_mark[-1].blk.q);
 				  /*
@@ -1791,465 +1791,465 @@ case 21:
 				}
 break;
 case 22:
-#line 411 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 411 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_not(yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 23:
-#line 413 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 413 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk = yystack.l_mark[-1].blk; }
 break;
 case 24:
-#line 415 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 415 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk = yystack.l_mark[-1].blk; }
 break;
 case 26:
-#line 418 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 418 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_and(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 27:
-#line 419 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 419 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_or(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 28:
-#line 421 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 421 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_ncode(NULL, (bpf_u_int32)yystack.l_mark[0].i,
 						   yyval.blk.q = yystack.l_mark[-1].blk.q); }
 break;
 case 31:
-#line 426 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 426 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_not(yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 32:
-#line 428 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 428 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ QSET(yyval.blk.q, yystack.l_mark[-2].i, yystack.l_mark[-1].i, yystack.l_mark[0].i); }
 break;
 case 33:
-#line 429 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 429 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ QSET(yyval.blk.q, yystack.l_mark[-1].i, yystack.l_mark[0].i, Q_DEFAULT); }
 break;
 case 34:
-#line 430 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 430 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ QSET(yyval.blk.q, yystack.l_mark[-1].i, Q_DEFAULT, yystack.l_mark[0].i); }
 break;
 case 35:
-#line 431 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 431 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ QSET(yyval.blk.q, yystack.l_mark[-1].i, Q_DEFAULT, Q_PROTO); }
 break;
 case 36:
-#line 432 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 432 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ QSET(yyval.blk.q, yystack.l_mark[-1].i, Q_DEFAULT, Q_PROTOCHAIN); }
 break;
 case 37:
-#line 433 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 433 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ QSET(yyval.blk.q, yystack.l_mark[-1].i, Q_DEFAULT, yystack.l_mark[0].i); }
 break;
 case 38:
-#line 435 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 435 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 39:
-#line 436 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 436 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = yystack.l_mark[-1].blk.b; yyval.blk.q = yystack.l_mark[-2].blk.q; }
 break;
 case 40:
-#line 437 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 437 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_proto_abbrev(yystack.l_mark[0].i); yyval.blk.q = qerr; }
 break;
 case 41:
-#line 438 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 438 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_relation(yystack.l_mark[-1].i, yystack.l_mark[-2].a, yystack.l_mark[0].a, 0);
 				  yyval.blk.q = qerr; }
 break;
 case 42:
-#line 440 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 440 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_relation(yystack.l_mark[-1].i, yystack.l_mark[-2].a, yystack.l_mark[0].a, 1);
 				  yyval.blk.q = qerr; }
 break;
 case 43:
-#line 442 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 442 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = yystack.l_mark[0].rblk; yyval.blk.q = qerr; }
 break;
 case 44:
-#line 443 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 443 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_atmtype_abbrev(yystack.l_mark[0].i); yyval.blk.q = qerr; }
 break;
 case 45:
-#line 444 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 444 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_atmmulti_abbrev(yystack.l_mark[0].i); yyval.blk.q = qerr; }
 break;
 case 46:
-#line 445 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 445 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = yystack.l_mark[0].blk.b; yyval.blk.q = qerr; }
 break;
 case 47:
-#line 446 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 446 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_mtp2type_abbrev(yystack.l_mark[0].i); yyval.blk.q = qerr; }
 break;
 case 48:
-#line 447 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 447 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = yystack.l_mark[0].blk.b; yyval.blk.q = qerr; }
 break;
 case 50:
-#line 451 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 451 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_DEFAULT; }
 break;
 case 51:
-#line 454 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 454 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_SRC; }
 break;
 case 52:
-#line 455 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 455 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_DST; }
 break;
 case 53:
-#line 456 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 456 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_OR; }
 break;
 case 54:
-#line 457 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 457 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_OR; }
 break;
 case 55:
-#line 458 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 458 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_AND; }
 break;
 case 56:
-#line 459 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 459 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_AND; }
 break;
 case 57:
-#line 460 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 460 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ADDR1; }
 break;
 case 58:
-#line 461 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 461 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ADDR2; }
 break;
 case 59:
-#line 462 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 462 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ADDR3; }
 break;
 case 60:
-#line 463 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 463 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ADDR4; }
 break;
 case 61:
-#line 464 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 464 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_RA; }
 break;
 case 62:
-#line 465 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 465 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_TA; }
 break;
 case 63:
-#line 468 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 468 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_HOST; }
 break;
 case 64:
-#line 469 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 469 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_NET; }
 break;
 case 65:
-#line 470 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 470 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_PORT; }
 break;
 case 66:
-#line 471 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 471 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_PORTRANGE; }
 break;
 case 67:
-#line 474 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 474 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_GATEWAY; }
 break;
 case 68:
-#line 476 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 476 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_LINK; }
 break;
 case 69:
-#line 477 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 477 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_IP; }
 break;
 case 70:
-#line 478 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 478 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ARP; }
 break;
 case 71:
-#line 479 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 479 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_RARP; }
 break;
 case 72:
-#line 480 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 480 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_SCTP; }
 break;
 case 73:
-#line 481 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 481 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_TCP; }
 break;
 case 74:
-#line 482 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 482 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_UDP; }
 break;
 case 75:
-#line 483 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 483 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ICMP; }
 break;
 case 76:
-#line 484 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 484 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_IGMP; }
 break;
 case 77:
-#line 485 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 485 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_IGRP; }
 break;
 case 78:
-#line 486 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 486 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_PIM; }
 break;
 case 79:
-#line 487 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 487 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_VRRP; }
 break;
 case 80:
-#line 488 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 488 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_CARP; }
 break;
 case 81:
-#line 489 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 489 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ATALK; }
 break;
 case 82:
-#line 490 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 490 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_AARP; }
 break;
 case 83:
-#line 491 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 491 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_DECNET; }
 break;
 case 84:
-#line 492 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 492 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_LAT; }
 break;
 case 85:
-#line 493 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 493 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_SCA; }
 break;
 case 86:
-#line 494 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 494 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_MOPDL; }
 break;
 case 87:
-#line 495 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 495 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_MOPRC; }
 break;
 case 88:
-#line 496 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 496 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_IPV6; }
 break;
 case 89:
-#line 497 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 497 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ICMPV6; }
 break;
 case 90:
-#line 498 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 498 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_AH; }
 break;
 case 91:
-#line 499 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 499 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ESP; }
 break;
 case 92:
-#line 500 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 500 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISO; }
 break;
 case 93:
-#line 501 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 501 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ESIS; }
 break;
 case 94:
-#line 502 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 502 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS; }
 break;
 case 95:
-#line 503 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 503 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_L1; }
 break;
 case 96:
-#line 504 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 504 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_L2; }
 break;
 case 97:
-#line 505 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 505 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_IIH; }
 break;
 case 98:
-#line 506 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 506 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_LSP; }
 break;
 case 99:
-#line 507 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 507 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_SNP; }
 break;
 case 100:
-#line 508 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 508 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_PSNP; }
 break;
 case 101:
-#line 509 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 509 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_ISIS_CSNP; }
 break;
 case 102:
-#line 510 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 510 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_CLNP; }
 break;
 case 103:
-#line 511 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 511 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_STP; }
 break;
 case 104:
-#line 512 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 512 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_IPX; }
 break;
 case 105:
-#line 513 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 513 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_NETBEUI; }
 break;
 case 106:
-#line 514 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 514 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = Q_RADIO; }
 break;
 case 107:
-#line 516 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 516 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_broadcast(yystack.l_mark[-1].i); }
 break;
 case 108:
-#line 517 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 517 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_multicast(yystack.l_mark[-1].i); }
 break;
 case 109:
-#line 518 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 518 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_less(yystack.l_mark[0].i); }
 break;
 case 110:
-#line 519 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 519 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_greater(yystack.l_mark[0].i); }
 break;
 case 111:
-#line 520 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 520 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_byteop(yystack.l_mark[-1].i, yystack.l_mark[-2].i, yystack.l_mark[0].i); }
 break;
 case 112:
-#line 521 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 521 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_inbound(0); }
 break;
 case 113:
-#line 522 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 522 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_inbound(1); }
 break;
 case 114:
-#line 523 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 523 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_vlan(yystack.l_mark[0].i); }
 break;
 case 115:
-#line 524 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 524 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_vlan(-1); }
 break;
 case 116:
-#line 525 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 525 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_mpls(yystack.l_mark[0].i); }
 break;
 case 117:
-#line 526 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 526 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_mpls(-1); }
 break;
 case 118:
-#line 527 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 527 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pppoed(); }
 break;
 case 119:
-#line 528 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 528 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pppoes(yystack.l_mark[0].i); }
 break;
 case 120:
-#line 529 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 529 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pppoes(-1); }
 break;
 case 121:
-#line 530 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 530 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_geneve(yystack.l_mark[0].i); }
 break;
 case 122:
-#line 531 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 531 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_geneve(-1); }
 break;
 case 123:
-#line 532 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 532 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = yystack.l_mark[0].rblk; }
 break;
 case 124:
-#line 533 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 533 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = yystack.l_mark[0].rblk; }
 break;
 case 125:
-#line 534 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 534 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = yystack.l_mark[0].rblk; }
 break;
 case 126:
-#line 537 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 537 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pf_ifname(yystack.l_mark[0].s); }
 break;
 case 127:
-#line 538 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 538 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pf_ruleset(yystack.l_mark[0].s); }
 break;
 case 128:
-#line 539 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 539 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pf_rnr(yystack.l_mark[0].i); }
 break;
 case 129:
-#line 540 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 540 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pf_srnr(yystack.l_mark[0].i); }
 break;
 case 130:
-#line 541 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 541 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pf_reason(yystack.l_mark[0].i); }
 break;
 case 131:
-#line 542 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 542 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_pf_action(yystack.l_mark[0].i); }
 break;
 case 132:
-#line 546 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 546 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_p80211_type(yystack.l_mark[-2].i | yystack.l_mark[0].i,
 					IEEE80211_FC0_TYPE_MASK |
 					IEEE80211_FC0_SUBTYPE_MASK);
 				}
 break;
 case 133:
-#line 550 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 550 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_p80211_type(yystack.l_mark[0].i,
 					IEEE80211_FC0_TYPE_MASK);
 				}
 break;
 case 134:
-#line 553 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 553 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_p80211_type(yystack.l_mark[0].i,
 					IEEE80211_FC0_TYPE_MASK |
 					IEEE80211_FC0_SUBTYPE_MASK);
 				}
 break;
 case 135:
-#line 557 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 557 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_p80211_fcdir(yystack.l_mark[0].i); }
 break;
 case 137:
-#line 561 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 561 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = str2tok(yystack.l_mark[0].s, ieee80211_types);
 				  if (yyval.i == -1)
 				  	bpf_error("unknown 802.11 type name");
 				}
 break;
 case 139:
-#line 568 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 568 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ const struct tok *types = NULL;
 				  int i;
 				  for (i = 0;; i++) {
@@ -2270,7 +2270,7 @@ case 139:
 				}
 break;
 case 140:
-#line 588 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 588 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ int i;
 				  for (i = 0;; i++) {
 				  	if (ieee80211_type_subtypes[i].tok == NULL) {
@@ -2287,11 +2287,11 @@ case 140:
 				}
 break;
 case 141:
-#line 604 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 604 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_llc(); }
 break;
 case 142:
-#line 605 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 605 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ if (pcap_strcasecmp(yystack.l_mark[0].s, "i") == 0)
 					yyval.rblk = gen_llc_i();
 				  else if (pcap_strcasecmp(yystack.l_mark[0].s, "s") == 0)
@@ -2314,11 +2314,11 @@ case 142:
 				}
 break;
 case 143:
-#line 626 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 626 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.rblk = gen_llc_s_subtype(LLC_RNR); }
 break;
 case 145:
-#line 630 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 630 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ if (pcap_strcasecmp(yystack.l_mark[0].s, "nods") == 0)
 					yyval.i = IEEE80211_FC1_DIR_NODS;
 				  else if (pcap_strcasecmp(yystack.l_mark[0].s, "tods") == 0)
@@ -2332,195 +2332,195 @@ case 145:
 				}
 break;
 case 146:
-#line 643 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 643 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = yystack.l_mark[0].i; }
 break;
 case 147:
-#line 644 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 644 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = pfreason_to_num(yystack.l_mark[0].s); }
 break;
 case 148:
-#line 647 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 647 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = pfaction_to_num(yystack.l_mark[0].s); }
 break;
 case 149:
-#line 650 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 650 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = BPF_JGT; }
 break;
 case 150:
-#line 651 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 651 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = BPF_JGE; }
 break;
 case 151:
-#line 652 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 652 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = BPF_JEQ; }
 break;
 case 152:
-#line 654 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 654 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = BPF_JGT; }
 break;
 case 153:
-#line 655 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 655 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = BPF_JGE; }
 break;
 case 154:
-#line 656 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 656 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = BPF_JEQ; }
 break;
 case 155:
-#line 658 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 658 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_loadi(yystack.l_mark[0].i); }
 break;
 case 157:
-#line 661 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 661 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_load(yystack.l_mark[-3].i, yystack.l_mark[-1].a, 1); }
 break;
 case 158:
-#line 662 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 662 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_load(yystack.l_mark[-5].i, yystack.l_mark[-3].a, yystack.l_mark[-1].i); }
 break;
 case 159:
-#line 663 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 663 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_ADD, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 160:
-#line 664 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 664 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_SUB, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 161:
-#line 665 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 665 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_MUL, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 162:
-#line 666 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 666 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_DIV, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 163:
-#line 667 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 667 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_MOD, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 164:
-#line 668 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 668 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_AND, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 165:
-#line 669 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 669 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_OR, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 166:
-#line 670 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 670 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_XOR, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 167:
-#line 671 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 671 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_LSH, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 168:
-#line 672 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 672 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_arth(BPF_RSH, yystack.l_mark[-2].a, yystack.l_mark[0].a); }
 break;
 case 169:
-#line 673 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 673 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_neg(yystack.l_mark[0].a); }
 break;
 case 170:
-#line 674 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 674 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = yystack.l_mark[-1].a; }
 break;
 case 171:
-#line 675 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 675 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.a = gen_loadlen(); }
 break;
 case 172:
-#line 677 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 677 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = '&'; }
 break;
 case 173:
-#line 678 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 678 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = '|'; }
 break;
 case 174:
-#line 679 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 679 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = '<'; }
 break;
 case 175:
-#line 680 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 680 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = '>'; }
 break;
 case 176:
-#line 681 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 681 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = '='; }
 break;
 case 178:
-#line 684 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 684 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = yystack.l_mark[-1].i; }
 break;
 case 179:
-#line 686 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 686 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_LANE; }
 break;
 case 180:
-#line 687 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 687 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_METAC;	}
 break;
 case 181:
-#line 688 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 688 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_BCC; }
 break;
 case 182:
-#line 689 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 689 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_OAMF4EC; }
 break;
 case 183:
-#line 690 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 690 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_OAMF4SC; }
 break;
 case 184:
-#line 691 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 691 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_SC; }
 break;
 case 185:
-#line 692 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 692 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_ILMIC; }
 break;
 case 186:
-#line 694 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 694 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_OAM; }
 break;
 case 187:
-#line 695 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 695 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_OAMF4; }
 break;
 case 188:
-#line 696 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 696 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_CONNECTMSG; }
 break;
 case 189:
-#line 697 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 697 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = A_METACONNECT; }
 break;
 case 190:
-#line 700 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 700 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.atmfieldtype = A_VPI; }
 break;
 case 191:
-#line 701 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 701 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.atmfieldtype = A_VCI; }
 break;
 case 193:
-#line 704 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 704 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_atmfield_code(yystack.l_mark[-2].blk.atmfieldtype, (bpf_int32)yystack.l_mark[0].i, (bpf_u_int32)yystack.l_mark[-1].i, 0); }
 break;
 case 194:
-#line 705 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 705 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_atmfield_code(yystack.l_mark[-2].blk.atmfieldtype, (bpf_int32)yystack.l_mark[0].i, (bpf_u_int32)yystack.l_mark[-1].i, 1); }
 break;
 case 195:
-#line 706 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 706 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = yystack.l_mark[-1].blk.b; yyval.blk.q = qerr; }
 break;
 case 196:
-#line 708 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 708 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 	yyval.blk.atmfieldtype = yystack.l_mark[-1].blk.atmfieldtype;
 	if (yyval.blk.atmfieldtype == A_VPI ||
@@ -2529,79 +2529,79 @@ case 196:
 	}
 break;
 case 198:
-#line 716 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 716 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_or(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 case 199:
-#line 719 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 719 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = M_FISU; }
 break;
 case 200:
-#line 720 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 720 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = M_LSSU; }
 break;
 case 201:
-#line 721 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 721 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = M_MSU; }
 break;
 case 202:
-#line 722 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 722 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = MH_FISU; }
 break;
 case 203:
-#line 723 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 723 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = MH_LSSU; }
 break;
 case 204:
-#line 724 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 724 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.i = MH_MSU; }
 break;
 case 205:
-#line 727 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 727 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = M_SIO; }
 break;
 case 206:
-#line 728 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 728 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = M_OPC; }
 break;
 case 207:
-#line 729 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 729 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = M_DPC; }
 break;
 case 208:
-#line 730 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 730 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = M_SLS; }
 break;
 case 209:
-#line 731 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 731 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = MH_SIO; }
 break;
 case 210:
-#line 732 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 732 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = MH_OPC; }
 break;
 case 211:
-#line 733 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 733 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = MH_DPC; }
 break;
 case 212:
-#line 734 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 734 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.mtp3fieldtype = MH_SLS; }
 break;
 case 214:
-#line 737 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 737 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_mtp3field_code(yystack.l_mark[-2].blk.mtp3fieldtype, (u_int)yystack.l_mark[0].i, (u_int)yystack.l_mark[-1].i, 0); }
 break;
 case 215:
-#line 738 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 738 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = gen_mtp3field_code(yystack.l_mark[-2].blk.mtp3fieldtype, (u_int)yystack.l_mark[0].i, (u_int)yystack.l_mark[-1].i, 1); }
 break;
 case 216:
-#line 739 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 739 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ yyval.blk.b = yystack.l_mark[-1].blk.b; yyval.blk.q = qerr; }
 break;
 case 217:
-#line 741 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 741 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{
 	yyval.blk.mtp3fieldtype = yystack.l_mark[-1].blk.mtp3fieldtype;
 	if (yyval.blk.mtp3fieldtype == M_SIO ||
@@ -2616,7 +2616,7 @@ case 217:
 	}
 break;
 case 219:
-#line 755 "/usr/src/minix/external/bsd/libpcap/lib/../dist/grammar.y"
+#line 755 "/usr/src/external/bsd/libpcap/lib/../dist/grammar.y"
 	{ gen_or(yystack.l_mark[-2].blk.b, yystack.l_mark[0].blk.b); yyval.blk = yystack.l_mark[0].blk; }
 break;
 #line 2623 "grammar.c"

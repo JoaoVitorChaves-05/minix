@@ -7,7 +7,7 @@ Copyright (c) 1982, 1986, 1989, 1991, 1993
     The Regents of the University of California.  All rights reserved.
 
 Build information:
-          Build date   Wed May 27 12:56:30 UTC 2026
+          Build date   Sun May 31 16:37:23 UTC 2026
             Built by   root@minix
 
 Build settings:
@@ -33,7 +33,7 @@ Build settings:
         MACHINE_ARCH = 'i386'
                 MAKE = 'make'
             MAKECONF = '/etc/mk.conf'
-           MAKEFLAGS = ' -m /usr/src/minix/share/mk .MAKE.LEVEL.ENV=MAKELEVEL HOST_OSTYPE=Minix-3.4.0-i386 USETOOLS=never _SRC_TOP_=/usr/src/minix _SRC_TOP_OBJ_=/usr/src/minix _THISDIR_=etc/'
+           MAKEFLAGS = ' -m /usr/src/share/mk .MAKE.LEVEL.ENV=MAKELEVEL HOST_OSTYPE=Minix-3.4.0-i386 USETOOLS=never _SRC_TOP_=/usr/src _SRC_TOP_OBJ_=/usr/src _THISDIR_=etc/'
           MAKEOBJDIR = (undefined)
     MAKEOBJDIRPREFIX = (undefined)
          MAKEVERBOSE = '1'
@@ -91,7 +91,7 @@ Build settings:
                MKX11 = 'no'
                 MKYP = 'no'
           NBUILDJOBS = (undefined)
-        NETBSDSRCDIR = '/usr/src/minix'
+        NETBSDSRCDIR = '/usr/src'
           NOCLEANDIR = (undefined)
        NODISTRIBDIRS = (undefined)
           NOINCLUDES = (undefined)

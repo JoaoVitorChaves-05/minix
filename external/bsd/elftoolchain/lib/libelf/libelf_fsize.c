@@ -33,7 +33,7 @@
 __RCSID("$NetBSD: libelf_fsize.m4,v 1.2 2014/03/09 16:58:04 christos Exp $");
 ELFTC_VCSID("Id: libelf_fsize.m4 2225 2011-11-26 18:55:54Z jkoshy ");
 
-/* WARNING: GENERATED FROM /usr/src/minix/external/bsd/elftoolchain/lib/libelf/../../dist/libelf/libelf_fsize.m4. */
+/* WARNING: GENERATED FROM /usr/src/external/bsd/elftoolchain/lib/libelf/../../dist/libelf/libelf_fsize.m4. */
 
 /*
  * Create an array of file sizes from the elf_type definitions

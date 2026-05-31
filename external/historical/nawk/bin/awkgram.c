@@ -19,7 +19,7 @@
 
 #define YYPURE 0
 
-#line 26 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 26 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 #if HAVE_NBTOOL_CONFIG_H
 #include "nbtool_config.h"
 #endif
@@ -37,7 +37,7 @@ int	infunc	= 0;	/* = 1 if in arglist or body of func */
 int	inloop	= 0;	/* = 1 if in while, for, do */
 char	*curfname = 0;	/* current function name */
 Node	*arglist = 0;	/* list of args for current function */
-#line 45 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 45 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 #ifdef YYSTYPE
 #undef  YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
@@ -3774,7 +3774,7 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 472 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 472 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 
 void setfname(Cell *p)
 {
@@ -4019,474 +4019,474 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 103 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 103 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (errorflag==0)
 			winner = (Node *)stat3(PROGRAM, beginloc, yystack.l_mark[0].p, endloc); }
 break;
 case 2:
-#line 105 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 105 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyclearin; bracecheck(); SYNTAX("bailing out"); }
 break;
 case 13:
-#line 129 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 129 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{inloop++;}
 break;
 case 14:
-#line 130 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 130 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ --inloop; yyval.p = stat4(FOR, yystack.l_mark[-9].p, notnull(yystack.l_mark[-6].p), yystack.l_mark[-3].p, yystack.l_mark[0].p); }
 break;
 case 15:
-#line 131 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 131 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{inloop++;}
 break;
 case 16:
-#line 132 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 132 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ --inloop; yyval.p = stat4(FOR, yystack.l_mark[-7].p, NIL, yystack.l_mark[-3].p, yystack.l_mark[0].p); }
 break;
 case 17:
-#line 133 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 133 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{inloop++;}
 break;
 case 18:
-#line 134 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 134 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ --inloop; yyval.p = stat3(IN, yystack.l_mark[-5].p, makearr(yystack.l_mark[-3].p), yystack.l_mark[0].p); }
 break;
 case 19:
-#line 138 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 138 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ setfname(yystack.l_mark[0].cp); }
 break;
 case 20:
-#line 139 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 139 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ setfname(yystack.l_mark[0].cp); }
 break;
 case 21:
-#line 143 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 143 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = notnull(yystack.l_mark[-1].p); }
 break;
 case 26:
-#line 155 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 155 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.i = 0; }
 break;
 case 28:
-#line 160 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 160 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.i = 0; }
 break;
 case 30:
-#line 166 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 166 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = 0; }
 break;
 case 32:
-#line 171 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 171 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = 0; }
 break;
 case 33:
-#line 172 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 172 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = yystack.l_mark[-1].p; }
 break;
 case 34:
-#line 176 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 176 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = notnull(yystack.l_mark[0].p); }
 break;
 case 35:
-#line 180 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 180 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat2(PASTAT, yystack.l_mark[0].p, stat2(PRINT, rectonode(), NIL)); }
 break;
 case 36:
-#line 181 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 181 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat2(PASTAT, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 37:
-#line 182 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 182 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = pa2stat(yystack.l_mark[-3].p, yystack.l_mark[0].p, stat2(PRINT, rectonode(), NIL)); }
 break;
 case 38:
-#line 183 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 183 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = pa2stat(yystack.l_mark[-6].p, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 39:
-#line 184 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 184 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat2(PASTAT, NIL, yystack.l_mark[-1].p); }
 break;
 case 40:
-#line 186 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 186 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ beginloc = linkum(beginloc, yystack.l_mark[-1].p); yyval.p = 0; }
 break;
 case 41:
-#line 188 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 188 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ endloc = linkum(endloc, yystack.l_mark[-1].p); yyval.p = 0; }
 break;
 case 42:
-#line 189 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 189 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{infunc++;}
 break;
 case 43:
-#line 190 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 190 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ infunc--; curfname=0; defn((Cell *)yystack.l_mark[-7].p, yystack.l_mark[-5].p, yystack.l_mark[-1].p); yyval.p = 0; }
 break;
 case 45:
-#line 195 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 195 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = linkum(yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 47:
-#line 200 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 200 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = linkum(yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 48:
-#line 204 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 204 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 49:
-#line 206 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 206 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(CONDEXPR, notnull(yystack.l_mark[-4].p), yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 50:
-#line 208 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 208 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(BOR, notnull(yystack.l_mark[-2].p), notnull(yystack.l_mark[0].p)); }
 break;
 case 51:
-#line 210 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 210 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(AND, notnull(yystack.l_mark[-2].p), notnull(yystack.l_mark[0].p)); }
 break;
 case 52:
-#line 211 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 211 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(yystack.l_mark[-1].i, NIL, yystack.l_mark[-2].p, (Node*)makedfa(yystack.l_mark[0].s, 0)); }
 break;
 case 53:
-#line 213 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 213 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[0].p))
 			yyval.p = op3(yystack.l_mark[-1].i, NIL, yystack.l_mark[-2].p, (Node*)makedfa(strnode(yystack.l_mark[0].p), 0));
 		  else
 			yyval.p = op3(yystack.l_mark[-1].i, (Node *)1, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 54:
-#line 217 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 217 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(INTEST, yystack.l_mark[-2].p, makearr(yystack.l_mark[0].p)); }
 break;
 case 55:
-#line 218 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 218 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(INTEST, yystack.l_mark[-3].p, makearr(yystack.l_mark[0].p)); }
 break;
 case 56:
-#line 219 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 219 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(CAT, yystack.l_mark[-1].p, yystack.l_mark[0].p); }
 break;
 case 59:
-#line 225 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 225 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 60:
-#line 227 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 227 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(CONDEXPR, notnull(yystack.l_mark[-4].p), yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 61:
-#line 229 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 229 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(BOR, notnull(yystack.l_mark[-2].p), notnull(yystack.l_mark[0].p)); }
 break;
 case 62:
-#line 231 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 231 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(AND, notnull(yystack.l_mark[-2].p), notnull(yystack.l_mark[0].p)); }
 break;
 case 63:
-#line 232 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 232 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 64:
-#line 233 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 233 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 65:
-#line 234 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 234 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 66:
-#line 235 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 235 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 67:
-#line 236 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 236 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 68:
-#line 237 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 237 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(yystack.l_mark[-1].i, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 69:
-#line 238 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 238 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(yystack.l_mark[-1].i, NIL, yystack.l_mark[-2].p, (Node*)makedfa(yystack.l_mark[0].s, 0)); }
 break;
 case 70:
-#line 240 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 240 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[0].p))
 			yyval.p = op3(yystack.l_mark[-1].i, NIL, yystack.l_mark[-2].p, (Node*)makedfa(strnode(yystack.l_mark[0].p), 0));
 		  else
 			yyval.p = op3(yystack.l_mark[-1].i, (Node *)1, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 71:
-#line 244 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 244 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(INTEST, yystack.l_mark[-2].p, makearr(yystack.l_mark[0].p)); }
 break;
 case 72:
-#line 245 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 245 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(INTEST, yystack.l_mark[-3].p, makearr(yystack.l_mark[0].p)); }
 break;
 case 73:
-#line 246 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 246 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ 
 			if (safe) SYNTAX("cmd | getline is unsafe");
 			else yyval.p = op3(GETLINE, yystack.l_mark[0].p, itonp(yystack.l_mark[-2].i), yystack.l_mark[-3].p); }
 break;
 case 74:
-#line 249 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 249 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ 
 			if (safe) SYNTAX("cmd | getline is unsafe");
 			else yyval.p = op3(GETLINE, (Node*)0, itonp(yystack.l_mark[-1].i), yystack.l_mark[-2].p); }
 break;
 case 75:
-#line 252 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 252 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(CAT, yystack.l_mark[-1].p, yystack.l_mark[0].p); }
 break;
 case 78:
-#line 258 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 258 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = linkum(yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 79:
-#line 259 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 259 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = linkum(yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 81:
-#line 264 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 264 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = linkum(yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 82:
-#line 268 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 268 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = rectonode(); }
 break;
 case 84:
-#line 270 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 270 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = yystack.l_mark[-1].p; }
 break;
 case 93:
-#line 287 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 287 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(MATCH, NIL, rectonode(), (Node*)makedfa(yystack.l_mark[0].s, 0)); }
 break;
 case 94:
-#line 288 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 288 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(NOT, notnull(yystack.l_mark[0].p)); }
 break;
 case 95:
-#line 292 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 292 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{startreg();}
 break;
 case 96:
-#line 292 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 292 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.s = yystack.l_mark[-1].s; }
 break;
 case 99:
-#line 300 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 300 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ 
 			if (safe) SYNTAX("print | is unsafe");
 			else yyval.p = stat3(yystack.l_mark[-3].i, yystack.l_mark[-2].p, itonp(yystack.l_mark[-1].i), yystack.l_mark[0].p); }
 break;
 case 100:
-#line 303 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 303 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{
 			if (safe) SYNTAX("print >> is unsafe");
 			else yyval.p = stat3(yystack.l_mark[-3].i, yystack.l_mark[-2].p, itonp(yystack.l_mark[-1].i), yystack.l_mark[0].p); }
 break;
 case 101:
-#line 306 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 306 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{
 			if (safe) SYNTAX("print > is unsafe");
 			else yyval.p = stat3(yystack.l_mark[-3].i, yystack.l_mark[-2].p, itonp(yystack.l_mark[-1].i), yystack.l_mark[0].p); }
 break;
 case 102:
-#line 309 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 309 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat3(yystack.l_mark[-1].i, yystack.l_mark[0].p, NIL, NIL); }
 break;
 case 103:
-#line 310 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 310 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat2(DELETE, makearr(yystack.l_mark[-3].p), yystack.l_mark[-1].p); }
 break;
 case 104:
-#line 311 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 311 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat2(DELETE, makearr(yystack.l_mark[0].p), 0); }
 break;
 case 105:
-#line 312 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 312 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = exptostat(yystack.l_mark[0].p); }
 break;
 case 106:
-#line 313 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 313 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyclearin; SYNTAX("illegal statement"); }
 break;
 case 109:
-#line 322 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 322 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (!inloop) SYNTAX("break illegal outside of loops");
 				  yyval.p = stat1(BREAK, NIL); }
 break;
 case 110:
-#line 324 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 324 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{  if (!inloop) SYNTAX("continue illegal outside of loops");
 				  yyval.p = stat1(CONTINUE, NIL); }
 break;
 case 111:
-#line 326 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 326 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{inloop++;}
 break;
 case 112:
-#line 326 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 326 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{--inloop;}
 break;
 case 113:
-#line 327 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 327 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat2(DO, yystack.l_mark[-6].p, notnull(yystack.l_mark[-2].p)); }
 break;
 case 114:
-#line 328 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 328 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat1(EXIT, yystack.l_mark[-1].p); }
 break;
 case 115:
-#line 329 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 329 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat1(EXIT, NIL); }
 break;
 case 117:
-#line 331 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 331 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat3(IF, yystack.l_mark[-3].p, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 118:
-#line 332 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 332 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat3(IF, yystack.l_mark[-1].p, yystack.l_mark[0].p, NIL); }
 break;
 case 119:
-#line 333 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 333 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = yystack.l_mark[-1].p; }
 break;
 case 120:
-#line 334 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 334 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (infunc)
 				SYNTAX("next is illegal inside a function");
 			  yyval.p = stat1(NEXT, NIL); }
 break;
 case 121:
-#line 337 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 337 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (infunc)
 				SYNTAX("nextfile is illegal inside a function");
 			  yyval.p = stat1(NEXTFILE, NIL); }
 break;
 case 122:
-#line 340 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 340 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat1(RETURN, yystack.l_mark[-1].p); }
 break;
 case 123:
-#line 341 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 341 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = stat1(RETURN, NIL); }
 break;
 case 125:
-#line 343 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 343 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{inloop++;}
 break;
 case 126:
-#line 343 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 343 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ --inloop; yyval.p = stat2(WHILE, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 127:
-#line 344 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 344 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = 0; }
 break;
 case 129:
-#line 349 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 349 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = linkum(yystack.l_mark[-1].p, yystack.l_mark[0].p); }
 break;
 case 133:
-#line 358 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 358 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.cp = catstr(yystack.l_mark[-1].cp, yystack.l_mark[0].cp); }
 break;
 case 134:
-#line 362 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 362 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(DIVEQ, yystack.l_mark[-3].p, yystack.l_mark[0].p); }
 break;
 case 135:
-#line 363 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 363 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(ADD, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 136:
-#line 364 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 364 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(MINUS, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 137:
-#line 365 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 365 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(MULT, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 138:
-#line 366 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 366 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(DIVIDE, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 139:
-#line 367 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 367 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(MOD, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 140:
-#line 368 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 368 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(POWER, yystack.l_mark[-2].p, yystack.l_mark[0].p); }
 break;
 case 141:
-#line 369 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 369 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(UMINUS, yystack.l_mark[0].p); }
 break;
 case 142:
-#line 370 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 370 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = yystack.l_mark[0].p; }
 break;
 case 143:
-#line 371 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 371 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(NOT, notnull(yystack.l_mark[0].p)); }
 break;
 case 144:
-#line 372 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 372 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(BLTIN, itonp(yystack.l_mark[-2].i), rectonode()); }
 break;
 case 145:
-#line 373 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 373 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(BLTIN, itonp(yystack.l_mark[-3].i), yystack.l_mark[-1].p); }
 break;
 case 146:
-#line 374 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 374 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(BLTIN, itonp(yystack.l_mark[0].i), rectonode()); }
 break;
 case 147:
-#line 375 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 375 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(CALL, celltonode(yystack.l_mark[-2].cp,CVAR), NIL); }
 break;
 case 148:
-#line 376 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 376 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(CALL, celltonode(yystack.l_mark[-3].cp,CVAR), yystack.l_mark[-1].p); }
 break;
 case 149:
-#line 377 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 377 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(CLOSE, yystack.l_mark[0].p); }
 break;
 case 150:
-#line 378 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 378 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(PREDECR, yystack.l_mark[0].p); }
 break;
 case 151:
-#line 379 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 379 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(PREINCR, yystack.l_mark[0].p); }
 break;
 case 152:
-#line 380 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 380 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(POSTDECR, yystack.l_mark[-1].p); }
 break;
 case 153:
-#line 381 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 381 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(POSTINCR, yystack.l_mark[-1].p); }
 break;
 case 154:
-#line 383 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 383 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op5(GENSUB, NIL, (Node*)makedfa(yystack.l_mark[-5].s, 1), yystack.l_mark[-3].p, yystack.l_mark[-1].p, rectonode()); }
 break;
 case 155:
-#line 385 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 385 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[-5].p))
 			yyval.p = op5(GENSUB, NIL, (Node *)makedfa(strnode(yystack.l_mark[-5].p), 1), yystack.l_mark[-3].p, yystack.l_mark[-1].p, rectonode());
 		  else
@@ -4494,11 +4494,11 @@ case 155:
 		}
 break;
 case 156:
-#line 391 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 391 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op5(GENSUB, NIL, (Node*)makedfa(yystack.l_mark[-7].s, 1), yystack.l_mark[-5].p, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 157:
-#line 393 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 393 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[-7].p))
 			yyval.p = op5(GENSUB, NIL, (Node *)makedfa(strnode(yystack.l_mark[-7].p),1), yystack.l_mark[-5].p,yystack.l_mark[-3].p,yystack.l_mark[-1].p);
 		  else
@@ -4506,139 +4506,139 @@ case 157:
 		}
 break;
 case 158:
-#line 398 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 398 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(GETLINE, yystack.l_mark[-2].p, itonp(yystack.l_mark[-1].i), yystack.l_mark[0].p); }
 break;
 case 159:
-#line 399 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 399 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(GETLINE, NIL, itonp(yystack.l_mark[-1].i), yystack.l_mark[0].p); }
 break;
 case 160:
-#line 400 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 400 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(GETLINE, yystack.l_mark[0].p, NIL, NIL); }
 break;
 case 161:
-#line 401 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 401 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(GETLINE, NIL, NIL, NIL); }
 break;
 case 162:
-#line 403 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 403 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(INDEX, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 163:
-#line 405 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 405 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ SYNTAX("index() doesn't permit regular expressions");
 		  yyval.p = op2(INDEX, yystack.l_mark[-3].p, (Node*)yystack.l_mark[-1].s); }
 break;
 case 164:
-#line 407 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 407 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = yystack.l_mark[-1].p; }
 break;
 case 165:
-#line 409 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 409 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(MATCHFCN, NIL, yystack.l_mark[-3].p, (Node*)makedfa(yystack.l_mark[-1].s, 1)); }
 break;
 case 166:
-#line 411 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 411 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[-1].p))
 			yyval.p = op3(MATCHFCN, NIL, yystack.l_mark[-3].p, (Node*)makedfa(strnode(yystack.l_mark[-1].p), 1));
 		  else
 			yyval.p = op3(MATCHFCN, (Node *)1, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 167:
-#line 415 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 415 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = celltonode(yystack.l_mark[0].cp, CCON); }
 break;
 case 168:
-#line 417 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 417 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op4(SPLIT, yystack.l_mark[-5].p, makearr(yystack.l_mark[-3].p), yystack.l_mark[-1].p, (Node*)STRING); }
 break;
 case 169:
-#line 419 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 419 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op4(SPLIT, yystack.l_mark[-5].p, makearr(yystack.l_mark[-3].p), (Node*)makedfa(yystack.l_mark[-1].s, 1), (Node *)REGEXPR); }
 break;
 case 170:
-#line 421 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 421 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op4(SPLIT, yystack.l_mark[-3].p, makearr(yystack.l_mark[-1].p), NIL, (Node*)STRING); }
 break;
 case 171:
-#line 422 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 422 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(yystack.l_mark[-3].i, yystack.l_mark[-1].p); }
 break;
 case 172:
-#line 423 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 423 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = celltonode(yystack.l_mark[0].cp, CCON); }
 break;
 case 173:
-#line 425 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 425 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op4(yystack.l_mark[-5].i, NIL, (Node*)makedfa(yystack.l_mark[-3].s, 1), yystack.l_mark[-1].p, rectonode()); }
 break;
 case 174:
-#line 427 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 427 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[-3].p))
 			yyval.p = op4(yystack.l_mark[-5].i, NIL, (Node*)makedfa(strnode(yystack.l_mark[-3].p), 1), yystack.l_mark[-1].p, rectonode());
 		  else
 			yyval.p = op4(yystack.l_mark[-5].i, (Node *)1, yystack.l_mark[-3].p, yystack.l_mark[-1].p, rectonode()); }
 break;
 case 175:
-#line 432 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 432 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op4(yystack.l_mark[-7].i, NIL, (Node*)makedfa(yystack.l_mark[-5].s, 1), yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 176:
-#line 434 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 434 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ if (constnode(yystack.l_mark[-5].p))
 			yyval.p = op4(yystack.l_mark[-7].i, NIL, (Node*)makedfa(strnode(yystack.l_mark[-5].p), 1), yystack.l_mark[-3].p, yystack.l_mark[-1].p);
 		  else
 			yyval.p = op4(yystack.l_mark[-7].i, (Node *)1, yystack.l_mark[-5].p, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 177:
-#line 439 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 439 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(SUBSTR, yystack.l_mark[-5].p, yystack.l_mark[-3].p, yystack.l_mark[-1].p); }
 break;
 case 178:
-#line 441 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 441 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op3(SUBSTR, yystack.l_mark[-3].p, yystack.l_mark[-1].p, NIL); }
 break;
 case 181:
-#line 447 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 447 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op2(ARRAY, makearr(yystack.l_mark[-3].p), yystack.l_mark[-1].p); }
 break;
 case 182:
-#line 448 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 448 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(INDIRECT, celltonode(yystack.l_mark[0].cp, CVAR)); }
 break;
 case 183:
-#line 449 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 449 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(INDIRECT, yystack.l_mark[0].p); }
 break;
 case 184:
-#line 453 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 453 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ arglist = yyval.p = 0; }
 break;
 case 185:
-#line 454 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 454 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ arglist = yyval.p = celltonode(yystack.l_mark[0].cp,CVAR); }
 break;
 case 186:
-#line 455 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 455 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{
 			checkdup(yystack.l_mark[-2].p, yystack.l_mark[0].cp);
 			arglist = yyval.p = linkum(yystack.l_mark[-2].p,celltonode(yystack.l_mark[0].cp,CVAR)); }
 break;
 case 187:
-#line 461 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 461 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = celltonode(yystack.l_mark[0].cp, CVAR); }
 break;
 case 188:
-#line 462 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 462 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(ARG, itonp(yystack.l_mark[0].i)); }
 break;
 case 189:
-#line 463 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 463 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = op1(VARNF, (Node *) yystack.l_mark[0].cp); }
 break;
 case 190:
-#line 468 "/usr/src/minix/external/historical/nawk/bin/../dist/awkgram.y"
+#line 468 "/usr/src/external/historical/nawk/bin/../dist/awkgram.y"
 	{ yyval.p = notnull(yystack.l_mark[-1].p); }
 break;
 #line 4645 "awkgram.c"

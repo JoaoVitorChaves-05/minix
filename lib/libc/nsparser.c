@@ -116,7 +116,7 @@
 
 #define YYPURE 0
 
-#line 2 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 2 "/usr/src/lib/libc/net/nsparser.y"
 /*	$NetBSD: nsparser.y,v 1.12 2012/03/20 17:44:18 matt Exp $	*/
 
 /*-
@@ -170,7 +170,7 @@ static	ns_src		cursrc;
 
 extern char *	_nsyytext;
 extern int _nsyylineno;
-#line 57 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 57 "/usr/src/lib/libc/net/nsparser.y"
 #ifdef YYSTYPE
 #undef  YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
@@ -418,7 +418,7 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 155 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 155 "/usr/src/lib/libc/net/nsparser.y"
 
 static void
 _nsaddsrctomap(const char *elem)
@@ -659,7 +659,7 @@ yyreduce:
     switch (yyn)
     {
 case 7:
-#line 85 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 85 "/usr/src/lib/libc/net/nsparser.y"
 	{
 			int lineno;
 
@@ -672,13 +672,13 @@ case 7:
 		}
 break;
 case 8:
-#line 96 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 96 "/usr/src/lib/libc/net/nsparser.y"
 	{
 			yyerrok;
 		}
 break;
 case 9:
-#line 103 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 103 "/usr/src/lib/libc/net/nsparser.y"
 	{
 			curdbt.name = yylval.str;
 			curdbt.srclist = NULL;
@@ -686,24 +686,24 @@ case 9:
 		}
 break;
 case 12:
-#line 117 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 117 "/usr/src/lib/libc/net/nsparser.y"
 	{
 			cursrc.flags = NS_SUCCESS;
 			_nsaddsrctomap(yystack.l_mark[0].str);
 		}
 break;
 case 13:
-#line 121 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 121 "/usr/src/lib/libc/net/nsparser.y"
 	{ cursrc.flags = NS_SUCCESS; }
 break;
 case 14:
-#line 122 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 122 "/usr/src/lib/libc/net/nsparser.y"
 	{
 			_nsaddsrctomap(yystack.l_mark[-4].str);
 		}
 break;
 case 17:
-#line 134 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 134 "/usr/src/lib/libc/net/nsparser.y"
 	{
 			if (yystack.l_mark[0].mapval)		/* if action == RETURN set RETURN bit */
 				cursrc.flags |= yystack.l_mark[-2].mapval;  
@@ -712,27 +712,27 @@ case 17:
 		}
 break;
 case 18:
-#line 143 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 143 "/usr/src/lib/libc/net/nsparser.y"
 	{ yyval.mapval = NS_SUCCESS; }
 break;
 case 19:
-#line 144 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 144 "/usr/src/lib/libc/net/nsparser.y"
 	{ yyval.mapval = NS_UNAVAIL; }
 break;
 case 20:
-#line 145 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 145 "/usr/src/lib/libc/net/nsparser.y"
 	{ yyval.mapval = NS_NOTFOUND; }
 break;
 case 21:
-#line 146 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 146 "/usr/src/lib/libc/net/nsparser.y"
 	{ yyval.mapval = NS_TRYAGAIN; }
 break;
 case 22:
-#line 150 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 150 "/usr/src/lib/libc/net/nsparser.y"
 	{ yyval.mapval = 1L; }
 break;
 case 23:
-#line 151 "/usr/src/minix/lib/libc/net/nsparser.y"
+#line 151 "/usr/src/lib/libc/net/nsparser.y"
 	{ yyval.mapval = 0L; }
 break;
 #line 739 "nsparser.c"

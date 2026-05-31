@@ -534,8 +534,8 @@ int _nsyy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *_nsyytext;
-#line 1 "/usr/src/minix/lib/libc/net/nslexer.l"
-#line 2 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 1 "/usr/src/lib/libc/net/nslexer.l"
+#line 2 "/usr/src/lib/libc/net/nslexer.l"
 /*	$NetBSD: nslexer.l,v 1.13 2012/06/25 22:32:45 abs Exp $	*/
 
 /*-
@@ -793,7 +793,7 @@ YY_DECL
 		}
 
 	{
-#line 56 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 56 "/usr/src/lib/libc/net/nslexer.l"
 
 
 #line 800 "<stdout>"
@@ -861,59 +861,59 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 58 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 58 "/usr/src/lib/libc/net/nslexer.l"
 ;			/* skip whitespace */
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 60 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 60 "/usr/src/lib/libc/net/nslexer.l"
 ;			/* skip comments */
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 62 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 62 "/usr/src/lib/libc/net/nslexer.l"
 ;			/* allow continuation */
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 64 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 64 "/usr/src/lib/libc/net/nslexer.l"
 return NL;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 66 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 66 "/usr/src/lib/libc/net/nslexer.l"
 return SUCCESS;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 67 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 67 "/usr/src/lib/libc/net/nslexer.l"
 return UNAVAIL;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 68 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 68 "/usr/src/lib/libc/net/nslexer.l"
 return NOTFOUND;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 69 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 69 "/usr/src/lib/libc/net/nslexer.l"
 return TRYAGAIN;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 71 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 71 "/usr/src/lib/libc/net/nslexer.l"
 return RETURN;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 72 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 72 "/usr/src/lib/libc/net/nslexer.l"
 return CONTINUE;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 74 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 74 "/usr/src/lib/libc/net/nslexer.l"
 {
 			char *p;
 			size_t i;
@@ -933,12 +933,12 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 91 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 91 "/usr/src/lib/libc/net/nslexer.l"
 return _nsyytext[0];
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 93 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 93 "/usr/src/lib/libc/net/nslexer.l"
 ECHO;
 	YY_BREAK
 #line 945 "<stdout>"
@@ -1913,7 +1913,7 @@ void _nsyyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 93 "/usr/src/minix/lib/libc/net/nslexer.l"
+#line 93 "/usr/src/lib/libc/net/nslexer.l"
 
 
 

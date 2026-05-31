@@ -19,7 +19,7 @@
         MACHINE_ARCH = 'i386'
                 MAKE = 'make'
             MAKECONF = '/etc/mk.conf'
-           MAKEFLAGS = ' -m /usr/src/minix/share/mk .MAKE.LEVEL.ENV=MAKELEVEL HOST_OSTYPE=Minix-3.4.0-i386 _SRC_TOP_=/usr/src/minix _SRC_TOP_OBJ_=/usr/src/minix _THISDIR_='
+           MAKEFLAGS = ' -m /usr/src/share/mk .MAKE.LEVEL.ENV=MAKELEVEL HOST_OSTYPE=Minix-3.4.0-i386 _SRC_TOP_=/usr/src _SRC_TOP_OBJ_=/usr/src _THISDIR_='
           MAKEOBJDIR = (undefined)
     MAKEOBJDIRPREFIX = (undefined)
          MAKEVERBOSE = '1'
@@ -77,7 +77,7 @@
                MKX11 = 'no'
                 MKYP = 'no'
           NBUILDJOBS = (undefined)
-        NETBSDSRCDIR = '/usr/src/minix'
+        NETBSDSRCDIR = '/usr/src'
           NOCLEANDIR = (undefined)
        NODISTRIBDIRS = (undefined)
           NOINCLUDES = (undefined)
