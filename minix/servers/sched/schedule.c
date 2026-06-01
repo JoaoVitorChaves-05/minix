@@ -81,7 +81,7 @@ static void pick_cpu(struct schedproc * proc)
 }
 
 /*===========================================================================*
- *				do_noquantum				     *
+ *				do_noquantum (MODIFICADO)			     *
  *===========================================================================*/
 
 int do_noquantum(message *m_ptr)
@@ -96,9 +96,9 @@ int do_noquantum(message *m_ptr)
 	}
 
 	rmp = &schedproc[proc_nr_n];
-	if (rmp->priority < MIN_USER_Q) {
-		rmp->priority += 1; /* lower priority */
-	}
+	
+	/* REMOVIDO: A logica que rebaixava a prioridade (rmp->priority += 1) foi apagada */
+    /* O processo apenas recebe um novo quantum e volta para o sorteio */
 
 	if ((rv = schedule_process_local(rmp)) != OK) {
 		return rv;
