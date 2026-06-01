@@ -1590,7 +1590,7 @@ asyn_error:
 }
 
 /*===========================================================================*
- *				enqueue					     * 
+ *				enqueue (MODIFICADO)			     * 
  *===========================================================================*/
 void enqueue(
   register struct proc *rp	/* this process is now runnable */
@@ -1606,6 +1606,14 @@ void enqueue(
  */
   int q = rp->p_priority;	 		/* scheduling queue to use */
   struct proc **rdy_head, **rdy_tail;
+
+  /* - ADICIONADO: Distribuição dos bilhetes - */
+  if(q < USER_Q) { /*processo de sistema*/
+      rp->p_tickets = 100;
+  } else { /*processo de usuário*/
+      rp->p_tickets = (MIN_USER_Q - q) + 1;
+  }
+  /* ----------------------------------------- */
   
   assert(proc_is_runnable(rp));
 
