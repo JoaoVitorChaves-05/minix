@@ -329,16 +329,13 @@ static int schedule_process(struct schedproc * rmp, unsigned flags)
 
 
 /*===========================================================================*
- *				init_scheduling				     *
+ *				init_scheduling (MODIFICADO)			     *
  *===========================================================================*/
 void init_scheduling(void)
 {
-	int r;
-
-	balance_timeout = BALANCE_TIMEOUT * sys_hz();
-
-	if ((r = sys_setalarm(balance_timeout, 0)) != OK)
-		panic("sys_setalarm failed: %d", r);
+	/* REMOVIDO: A chamada para sys_setalarm que agendava a execucao
+	 * periodica de balance_queues() foi comentada/removida.
+	 */
 }
 
 /*===========================================================================*
