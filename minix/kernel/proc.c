@@ -1796,12 +1796,19 @@ static struct proc * pick_proc(void)
     register struct proc *rp;
     struct proc *winner_proc = NULL;
     unsigned int total_tickets = 0;
-    int p_proc_nr;
+    int q;
+    struct proc **rdy_head;
 
-    /* Calcular o número total de bilhetes de todos os processos prontos */
-    for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
-        rp = proc_addr(p_proc_nr);
-        if(!isemptyp(rp) && proc_is_runnable(rp)){
+	/* Usamos um contador estático para garantir que a semente de 
+     * aleatoriedade mude, mesmo se o relógio do sistema congelar. */
+    static unsigned int rng_seed = 0;
+    rng_seed++;
+
+	rdy_head = get_cpulocal_var(run_q_head);
+
+    /* 1. Calcula o número total de bilhetes APENAS nas filas oficiais */
+    for (q = 0; q < NR_SCHED_QUEUES; q++) {
+        for (rp = rdy_head[q]; rp != NULL; rp = rp->p_nextready) {
             total_tickets += rp->p_tickets;
         }
     }
@@ -1811,31 +1818,28 @@ static struct proc * pick_proc(void)
         return NULL;
     }
 
-    /* Sorteio de um número vencedor entre 0 e (total_tickets - 1) */
-    /* get_monotonic() é utilizado para obter um número pseudo-aleatório */
-    unsigned int winning_ticket = get_monotonic() % total_tickets;
+    /* 2. Sorteio Desviciado: Soma o relógio com a nossa semente interna */
+    unsigned int winning_ticket = (get_monotonic() + rng_seed) % total_tickets;
     unsigned int current_ticket_count = 0;
 
-    /* Encontrar o processo com o bilhete sorteado */
-    for(p_proc_nr = 0; p_proc_nr < NR_PROCS + NR_TASKS; p_proc_nr++){
-        rp = proc_addr(p_proc_nr);
-        if(!isemptyp(rp) && proc_is_runnable(rp)){
+    /* 3. Encontra o vencedor do bilhete varrendo as filas */
+    for (q = 0; q < NR_SCHED_QUEUES; q++) {
+        for (rp = rdy_head[q]; rp != NULL; rp = rp->p_nextready) {
             current_ticket_count += rp->p_tickets;
-            if(current_ticket_count > winning_ticket){
+            if (current_ticket_count > winning_ticket) {
                 winner_proc = rp;
-                break;
+                goto found_winner; /* Quebra imediatamente os dois laços for */
             }
         }
     }
 
-    /* Caso o vencedor tenha sido encontrado é verificado se o processo é de usuário, 
-       caso seja, o tempo de uso de CPU será registrado */
-    if(winner_proc){
-        assert(proc_is_runnable(winner_proc));
-        if(priv(winner_proc)->s_flags & BILLABLE){
+found_winner:
+    /* Se o vencedor foi encontrado, registra o uso e envia para a CPU */
+    if (winner_proc) {
+        if (priv(winner_proc)->s_flags & BILLABLE) {
             get_cpulocal_var(bill_ptr) = winner_proc;
         }
-        return winner_proc; /* retorna o processo a ser executado */
+        return winner_proc;
     }
 
     return NULL;
