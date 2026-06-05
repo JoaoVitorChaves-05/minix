@@ -1,4 +1,0 @@
-#!/bin/sh
-echo 'before dotcmd'
-. "break_func"
-echo 'after dotcmd, return value:' 0

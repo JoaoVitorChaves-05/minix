@@ -1,4 +1,0 @@
-#!/bin/sh
-echo 'before dotcmd'
-. "return_subshell"
-echo 'after dotcmd, return value:' 0

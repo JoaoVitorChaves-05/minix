@@ -1,8 +1,0 @@
-#!/bin/sh
-{
-    echo 'compound start'
-    echo 'before dotcmd'
-. "break_until"
-echo 'after dotcmd, return value:' 0;
-    echo 'compound end'
-}

@@ -1,4 +1,0 @@
-#!/bin/sh
-echo 'before dotcmd'
-. "continue_case"
-echo 'after dotcmd, return value:' 0
