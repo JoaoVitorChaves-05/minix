@@ -360,7 +360,7 @@ void balance_queues(void)
 	int r, proc_nr;
 
 	/*
-	Aqui, nós removemos a mudança de prioridade, para que o processo não seja subido para a fila de prioridade mais alta quando ele for reequilibrado. O processo continuará a ser agendado na mesma fila, mas ele terá quantum novamente, somente quando todos os processos forem reequilibrados pela função balance_queues().
+	Aqui, nos removemos a promocao de prioridade.
 	for (proc_nr=0, rmp=schedproc; proc_nr < NR_PROCS; proc_nr++, rmp++) {
 		if (rmp->flags & IN_USE) {
 			if (rmp->priority > rmp->max_priority) {
