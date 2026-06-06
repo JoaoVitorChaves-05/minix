@@ -98,7 +98,7 @@ int do_noquantum(message *m_ptr)
 	rmp = &schedproc[proc_nr_n];
 
 	/*
-	Here, we remove the priority change, so that the process is not demoted to the lower priority queue when it runs out of quantum. The process will continue to be scheduled in the same queue, but it will be out of quantum, and will only get quantum again when it is rebalanced by the balance_queues() function.
+	Aqui, removemos o rebaixamento de prioridade.
 	if (rmp->priority < MIN_USER_Q) {
 		rmp->priority += 1; // lower priority
 	}
